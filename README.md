@@ -7,6 +7,9 @@ star: 是jsonRPC服务程序，常驻进程。后面可以添加扩展很多拓�
 star-monitor: 用于监控 worker工作状态，自动根据woker工作状态，调 miner 封装命令。
 
 
+大家有什么想要的filestar/filecoin/lotus相关小程序和工具，欢迎提issue！
+
+
 # 编译安装
 make all
 make install
