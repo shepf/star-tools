@@ -1,9 +1,9 @@
 # star-tools
-star-tools 
-用于提供一些lotus相关非代码侵入性的相关常用工具或小程序。
+star-tools 包含一个jsonRPC服务程序，以及一些常用工具。
+用于提供一些filestar/filecoin/lotus相关非代码侵入性的相关常用工具或小程序。
 
 
-star: 是服务程序，常驻进程。后面可以添加扩展需要实时执行的一些命令。
+star: 是jsonRPC服务程序，常驻进程。后面可以添加扩展很多拓展功能。
 star-monitor: 用于监控 worker工作状态，自动根据woker工作状态，调 miner 封装命令。
 
 

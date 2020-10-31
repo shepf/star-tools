@@ -27,8 +27,8 @@ func main() {
 
 	var wg sync.WaitGroup
 
-	//创建定时器，每隔1秒后，定时器就会给channel发送一个事件(当前时间)
-	ticker := time.NewTicker(time.Second * 120)
+	//创建定时器，每隔600秒后，定时器就会给channel发送一个事件(当前时间)
+	ticker := time.NewTicker(time.Second * 600)
 
 	i := 0
 	count := 0
@@ -49,8 +49,8 @@ func main() {
 			//打印子进程的输出
 			fmt.Println(string(output))
 
-			//fmt.Println(strings.Contains(string(output),"] 0 core(s) in use"))
-			if strings.Contains(string(output), "] 0 core(s) in use") {
+			//fmt.Println(strings.Contains(string(output),"] 0/32 core(s) in use"))
+			if strings.Contains(string(output), "] 0/") {
 				count++
 				str := fmt.Sprintf("The number of call sectors pledge: %d", count)
 				fmt.Println(str)
