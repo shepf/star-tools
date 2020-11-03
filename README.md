@@ -1,18 +1,23 @@
-# star-tools
-star-tools 包含一个jsonRPC服务程序，以及一些常用工具。
+# star-tools‘
+star-tools 致力于提供给矿工或个人一些非常好用的工具集。
+
+star-tools 包含一个jsonRPC服务程序，以及一些常用工具集。
 用于提供一些filestar/filecoin/lotus相关非代码侵入性的相关常用工具或小程序。
 
 
-star: 是jsonRPC服务程序，常驻进程。后面可以添加扩展很多拓展功能。
-star-monitor: 用于监控 worker工作状态，自动根据woker工作状态，调 miner 封装命令。
+- star: 是jsonRPC服务程序，常驻进程。后面可以添加扩展很多拓展功能。
+- star-monitor: 用于监控 worker工作状态，自动根据woker工作状态，调 miner 封装命令。
 
 
-大家有什么想要的filestar/filecoin/lotus相关小程序和工具，欢迎提issue！
+大家有什么想要的filestar/filecoin/lotus相关小程序和工具、需求，欢迎提issue！
 
 
-# 编译安装
-make all
+
+## 编译安装
+```
+make all 
 make install
+```
 
 
 ```
@@ -43,8 +48,8 @@ ps axf |grep star-monitor
 kill xxx
 ```
 
-# star使用说明
-## 配置监听ip
+## star使用说明(功能点)
+### 配置监听ip
 vi /root/.star/config.toml
 如下编辑，star 监听的ip地址，注意：默认只监听127.0.0.1
 ```
@@ -57,7 +62,9 @@ ListenAddress = "/ip4/192.168.31.39/tcp/3333/http"
 #
 ```
 
-## 获取Star版本
+通过配置IP，可以支持远程访问。
+
+### 获取Star版本
 ```
 curl -X POST \
      -H "Content-Type: application/json" \
@@ -66,7 +73,7 @@ curl -X POST \
      'http://127.0.0.1:3333/rpc/v0'
 ```
 
-## 查看miner信息
+### 查看miner信息
 ```
 curl -X POST \
      -H "Content-Type: application/json" \
@@ -75,7 +82,7 @@ curl -X POST \
      'http://127.0.0.1:3333/rpc/v0'  |jq
 ```
 
-## 查看workersList
+### 查看workersList
 ```
 curl -X POST \
      -H "Content-Type: application/json" \
@@ -84,7 +91,7 @@ curl -X POST \
      'http://127.0.0.1:3333/rpc/v0'
 ```
 
-## 获取系统运行时间
+### 获取系统运行时间
 ```
 curl -X POST \
      -H "Content-Type: application/json" \

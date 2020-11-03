@@ -52,7 +52,8 @@ func main() {
 			//fmt.Println(strings.Contains(string(output),"] 0/32 core(s) in use"))
 			if strings.Contains(string(output), "] 0/") {
 				count++
-				str := fmt.Sprintf("The number of call sectors pledge: %d", count)
+				var nowtime = time.Unix(time.Now().Unix(), 0).Format("2006-01-02 15:04:05")
+				str := fmt.Sprintf("%s The number of call sectors pledge: %d \n", nowtime, count)
 				fmt.Println(str)
 
 				// 生成Cmd
